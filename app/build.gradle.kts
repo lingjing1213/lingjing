@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.jing"
-    compileSdk = 34
+    compileSdk = 29
 
     defaultConfig {
         applicationId = "com.jing"
@@ -30,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
