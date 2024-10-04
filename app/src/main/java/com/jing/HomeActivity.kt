@@ -2,9 +2,11 @@ package com.jing
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.alibaba.fastjson2.JSONObject
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -19,15 +21,14 @@ class HomeActivity : ComponentActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        checkUserStatus()
+
         setContentView(R.layout.activity_home)
-
         loadHomeContent()
-
+        checkUserStatus()
     }
 
     private fun checkUserStatus() {
-        val sharedPreferences = getSharedPreferences("DemonPreferences", MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("lingjing", MODE_PRIVATE)
         val userId = sharedPreferences.getString("userId", null)
         val code = sharedPreferences.getString("code", null)
 
@@ -44,11 +45,11 @@ class HomeActivity : ComponentActivity(){
     private fun validateUserStatus(userId: String, code: String) {
 
         val okHttpClient = OkHttpClient()
-        val requestBody: RequestBody = JSONObject.of("userid", userId, "code", code).toString()
+        val requestBody: RequestBody = JSONObject.of("userId", userId, "code", code).toString()
             .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
         val request = Request.Builder()
             //todo 修改地址
-            .url("checkUser")
+            .url("")
             .post(requestBody)
             .build()
 
@@ -103,6 +104,39 @@ class HomeActivity : ComponentActivity(){
     }
 
     private fun loadHomeContent() {
-        TODO("按钮事件")
+
+        val buttonCoyote = findViewById<Button>(R.id.buttonCoyote)
+        val buttonKeyBox = findViewById<Button>(R.id.buttonKeyBox)
+        val buttonVibratingEgg = findViewById<Button>(R.id.buttonVibratingEgg)
+        val buttonSexMachine = findViewById<Button>(R.id.buttonSexMachine)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        buttonCoyote.setOnClickListener {
+
+        }
+        buttonKeyBox.setOnClickListener {
+            // TODO: 蓝牙钥匙盒按钮点击处理
+        }
+
+        buttonVibratingEgg.setOnClickListener{
+            // TODO: 跳蛋按钮点击处理
+
+        }
+
+        buttonSexMachine.setOnClickListener {
+            //TODO: 炮机
+
+        }
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> true
+                R.id.navigation_DMs -> true
+                R.id.navigation_activity -> true
+                R.id.navigation_my -> true
+                else -> false
+            }
+        }
     }
 }

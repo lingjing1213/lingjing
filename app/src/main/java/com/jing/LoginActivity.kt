@@ -49,11 +49,11 @@ class LoginActivity : ComponentActivity() {
 
     private fun loginUser(userId: String, code: String) {
         val okHttpClient = OkHttpClient()
-        val requestBody: RequestBody = JSONObject.of("userid", userId, "code", code).toString()
+        val requestBody: RequestBody = JSONObject.of("userId", userId, "code", code).toString()
             .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
         val request = Request.Builder()
             //todo
-            .url("服务端地址")
+            .url("")
             .post(requestBody)
             .build()
 
@@ -71,8 +71,8 @@ class LoginActivity : ComponentActivity() {
                        val jsonObject = JSONObject.parseObject(responseBody)
                        val result = jsonObject.getString("code")
                        if (result == "10000") {
-                           getSharedPreferences("user", MODE_PRIVATE).edit().
-                           putString("userid", userId).putString("code", code).apply()
+                           getSharedPreferences("lingjing", MODE_PRIVATE).edit().
+                           putString("userId", userId).putString("code", code).apply()
                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                            startActivity(intent)
                            overridePendingTransition(R.anim.slide_in_right, R.anim.fade_out)
