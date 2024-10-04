@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_DMs, R.id.navigation_activity,R.id.navigation_my
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         navView.itemIconTintList = null
+//        navView.background = getDrawable(R.color.buttonColor)
     }
 }
