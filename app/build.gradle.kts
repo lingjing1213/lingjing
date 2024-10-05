@@ -76,6 +76,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.okhttp)
     implementation(libs.fastjson2)
-
+    implementation(libs.rxandroidble)
 
 }
