@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.alibaba.fastjson2.JSONObject
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.jing.toys.CoyoteActivity
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -17,16 +18,29 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import java.io.IOException
 
+/**
+ * @Author：静
+ * @Package：com.jing
+ * @Project：灵境
+ * @Date：2024/10/5  下午11:59
+ * @Filename：HomeActivity
+ * @Version：1.0.0
+ */
 class HomeActivity : ComponentActivity(){
-
+    companion object {
+        //todo 此处需要替换为实际的服务器地址
+        private const val BASE_URL = "URl"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_home)
         loadHomeContent()
         checkUserStatus()
     }
-
+    /**
+     * 检查用户状态
+     * 此方法用于检查用户是否已经登录，以及登录后的状态验证
+     */
     private fun checkUserStatus() {
         val sharedPreferences = getSharedPreferences("lingjing", MODE_PRIVATE)
         val userId = sharedPreferences.getString("userId", null)
@@ -34,22 +48,27 @@ class HomeActivity : ComponentActivity(){
 
         if (userId == null || code == null) {
             // 用户未登录，跳转到登录界面
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+            redirectToLogin()
         } else {
             // 验证用户状态
             validateUserStatus(userId, code)
         }
     }
+    /**
+     * 验证用户状态
+     *
+     * 此方法用于向服务器发送用户ID和验证码，以验证用户是否 still 登录。
+     * 如果用户状态无效，则跳转到登录界面。
+     *
+     * @param userId 用户ID
+     * @param code 验证码
+     */
     private fun validateUserStatus(userId: String, code: String) {
-
         val okHttpClient = OkHttpClient()
         val requestBody: RequestBody = JSONObject.of("userId", userId, "code", code).toString()
             .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
         val request = Request.Builder()
-            //todo 修改地址
-            .url("")
+            .url(BASE_URL + "checkUser")
             .post(requestBody)
             .build()
 
@@ -103,6 +122,9 @@ class HomeActivity : ComponentActivity(){
         finish()
     }
 
+    /**
+     * 加载主页内容
+     */
     private fun loadHomeContent() {
 
         val buttonCoyote = findViewById<Button>(R.id.buttonCoyote)
@@ -113,6 +135,10 @@ class HomeActivity : ComponentActivity(){
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         buttonCoyote.setOnClickListener {
+
+            val intent = Intent(this, CoyoteActivity::class.java)
+            startActivity(intent)
+            finish()
 
         }
         buttonKeyBox.setOnClickListener {

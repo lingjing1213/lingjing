@@ -20,6 +20,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
+
+/**
+ * @Author：静
+ * @Package：com.jing
+ * @Project：灵境
+ * @Date：2024/10/5  下午11:59
+ * @Filename：BluetoothUtils
+ * @Version：1.0.0
+ */
 class BluetoothUtils {
 
     companion object {

@@ -17,8 +17,23 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import java.io.IOException
 
+/**
+ *@Author：静
+ *@Package：com.jing
+ *@Project：灵境
+ *@Date：2024/10/5  下午11:59
+ *@Filename：LoginActivity
+ *@Version：1.0.0
+ */
 class LoginActivity : ComponentActivity() {
 
+    companion object {
+        //todo: 填写你的服务器地址
+        private const val BASE_URL = "url"
+        private const val SHARED_PREFS_NAME = "lingjing"
+        private const val USER_ID_KEY = "userId"
+        private const val CODE_KEY = "code"
+    }
 
     private lateinit var editTextUserId: EditText
 
@@ -52,39 +67,41 @@ class LoginActivity : ComponentActivity() {
         val requestBody: RequestBody = JSONObject.of("userId", userId, "code", code).toString()
             .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
         val request = Request.Builder()
-            //todo
-            .url("")
+            .url(BASE_URL)
             .post(requestBody)
             .build()
 
-        okHttpClient.newCall(request).enqueue(object : Callback{
+        okHttpClient.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 runOnUiThread {
                     Toast.makeText(this@LoginActivity, "网络连接失败", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onResponse(call: Call, response: Response) {
-               runOnUiThread {
-                   if (response.isSuccessful) {
-                       val responseBody = response.body?.string()
-                       val jsonObject = JSONObject.parseObject(responseBody)
-                       val result = jsonObject.getString("code")
-                       if (result == "10000") {
-                           getSharedPreferences("lingjing", MODE_PRIVATE).edit().
-                           putString("userId", userId).putString("code", code).apply()
-                           val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-                           startActivity(intent)
-                           overridePendingTransition(R.anim.slide_in_right, R.anim.fade_out)
-                           finish()
-                           Toast.makeText(this@LoginActivity, "登录成功", Toast.LENGTH_SHORT).show()
-                       } else {
-                           Toast.makeText(this@LoginActivity, "登录失败",Toast.LENGTH_SHORT).show()
-                       }
-                   }else{
-                       Toast.makeText(this@LoginActivity, "网络连接失败", Toast.LENGTH_SHORT).show()
-                   }
-               }
+                runOnUiThread {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body?.string()
+                        val jsonObject = JSONObject.parseObject(responseBody)
+                        val result = jsonObject.getString("code")
+                        if (result == "10000") {
+                            val sharedPreferences = getSharedPreferences(SHARED_PREFS_NAME, MODE_PRIVATE)
+                            with(sharedPreferences.edit()) {
+                                putString(USER_ID_KEY, userId)
+                                putString(CODE_KEY, code)
+                                apply()
+                            }
+                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                            startActivity(intent)
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.fade_out)
+                            finish()
+                            Toast.makeText(this@LoginActivity, "登录成功", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this@LoginActivity, "登录失败", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this@LoginActivity, "网络连接失败", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         })
     }
