@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 郊狼按钮 -->
+    <Button
+        android:id="@+id/buttonCoyote"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="35dp"
+        android:text="郊狼"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVibratingEgg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/buttonKeyBox"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <!-- 钥匙盒按钮 -->
+
+    <!-- 跳蛋按钮 -->
+
+    <Button
+        android:id="@+id/buttonKeyBox"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:text="钥匙盒"
+        app:layout_constraintLeft_toRightOf="@+id/buttonCoyote"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonCoyote"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+    <!-- 炮机按钮 -->
+
+    <!-- 待定按钮1 -->
+
+    <Button
+        android:id="@+id/buttonVibratingEgg"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="35dp"
+        android:text="跳蛋"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/buttonSexMachine"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/buttonSexMachine"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:text="炮机"
+        app:layout_constraintLeft_toRightOf="@+id/buttonVibratingEgg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonVibratingEgg"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+    <!-- 待定按钮2 -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="35dp"
+        android:text="待定"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button2"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:text="待定"
+        app:layout_constraintLeft_toRightOf="@+id/button1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button1"
+        app:layout_constraintWidth_percent="0.4" />
+    <!-- 底部导航栏 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

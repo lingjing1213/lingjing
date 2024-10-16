@@ -1,0 +1,158 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF1F8"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 电量显示 -->
+    <TextView
+        android:id="@+id/battery_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="电量:0%"
+        android:textColor="#C2185B"
+        android:textSize="18sp" />
+
+    <!-- A 波形 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="A 波形"
+        android:textColor="#880E4F"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/a_waveform"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/border"
+        android:scaleType="fitXY" />
+
+    <!-- B 波形 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="B 波形"
+        android:textColor="#880E4F"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/b_waveform"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/border"
+        android:scaleType="fitXY" />
+
+    <!-- A 强度 -->
+    <TextView
+        android:id="@+id/a_intensity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A 强度：0 上限 290"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <SeekBar
+        android:id="@+id/a_intensity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="290"
+        android:progress="0"
+        android:progressTint="#F8BBD0"
+        android:thumbTint="#C2185B" />
+
+    <!-- B 强度 -->
+    <TextView
+        android:id="@+id/b_intensity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B 强度：0 上限 290"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <SeekBar
+        android:id="@+id/b_intensity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="290"
+        android:progress="0"
+        android:progressTint="#F8BBD0"
+        android:thumbTint="#C2185B" />
+
+    <!-- 功能按钮 -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:columnCount="3"
+        android:paddingTop="20dp">
+
+        <!-- 自娱自乐 -->
+        <Button
+            android:id="@+id/btn_self_entertain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F06292"
+            android:padding="10dp"
+            android:text="自娱自乐"
+            android:textColor="#FFFFFF" />
+
+        <!-- 远程控制 -->
+        <Button
+            android:id="@+id/btn_remote_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F06292"
+            android:padding="10dp"
+            android:text="远程控制"
+            android:textColor="#FFFFFF" />
+
+        <!-- 环境 -->
+        <Button
+            android:id="@+id/btn_environment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F06292"
+            android:padding="10dp"
+            android:text="环境"
+            android:textColor="#FFFFFF" />
+
+        <!-- 运动 -->
+        <Button
+            android:id="@+id/btn_exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F06292"
+            android:padding="10dp"
+            android:text="运动"
+            android:textColor="#FFFFFF" />
+
+        <!-- 音乐转波形 -->
+        <Button
+            android:id="@+id/btn_music_waveform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F06292"
+            android:padding="10dp"
+            android:text="音乐转波形"
+            android:textColor="#FFFFFF" />
+
+        <!-- 待定 -->
+        <Button
+            android:id="@+id/btn_pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F06292"
+            android:padding="10dp"
+            android:text="待定"
+            android:textColor="#FFFFFF" />
+    </GridLayout>
+
+</LinearLayout>

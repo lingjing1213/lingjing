@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Lingjing" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+<!--        主要颜色-屏幕上方导航栏颜色-底部导航栏默认选中文字颜色-->
+        <item name="colorPrimary">#FFF7ACBC</item>
+<!--        取消顶部导航栏和标题-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="LoginTheme" parent="AppTheme"/>
+</resources>

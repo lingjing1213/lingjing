@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_gradient"
+    android:gravity="center"> <!-- 添加 gravity 属性 -->
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="欢迎回来"
+        android:textSize="24sp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/editTextUserId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="用户ID"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/> <!-- 添加 marginBottom 属性 -->
+
+    <EditText
+        android:id="@+id/editTextCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="验证码"
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"/> <!-- 添加 marginBottom 属性 -->
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textColor="@android:color/white"
+        android:background="@color/buttonColor"
+        android:padding="12dp"/>
+</LinearLayout>
