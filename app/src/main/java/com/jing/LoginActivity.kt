@@ -32,7 +32,7 @@ class LoginActivity : ComponentActivity() {
 
     companion object {
         //todo: 填写你的服务器地址
-        private const val BASE_URL = "url"
+        private const val BASE_URL = "https://noticeably-positive-bird.ngrok-free.app/app/login"
         private const val SHARED_PREFS_NAME = "lingjing"
         private const val USER_ID_KEY = "userId"
         private const val CODE_KEY = "code"

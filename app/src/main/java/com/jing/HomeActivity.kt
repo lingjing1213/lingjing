@@ -34,7 +34,7 @@ class HomeActivity : ComponentActivity(){
         private const val USER_ID_KEY = "userId"
         private const val CODE_KEY = "code"
         private const val EXPIRATION_TIME = "expirationTime"
-        private const val BASE_URL = "url"
+        private const val BASE_URL = "https://noticeably-positive-bird.ngrok-free.app/app/checkUser"
     }
 
     private lateinit var rsaUtils: RSAUtils
