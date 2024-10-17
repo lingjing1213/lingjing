@@ -10,6 +10,7 @@ import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanResult;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -129,7 +130,30 @@ public class CoyoteActivity extends AppCompatActivity {
                     ToastUtils.showToast(CoyoteActivity.this, "连接断开");
                 }
             }
-        });
+
+           @Override
+           public void onServicesDiscovered(BluetoothGatt gatt, int status) {
+               if (status == BluetoothGatt.GATT_SUCCESS) {
+                   displayAvailableServices(gatt);
+               } else {
+                   Log.w("CoyoteActivity", "服务发现失败: $status");
+               }
+           }
+       });
+
+
+
+
+    }
+
+    private void displayAvailableServices(BluetoothGatt gatt) {
+        Log.d("CoyoteActivity", "开始显示可用服务");
+       gatt.getServices().forEach(service -> {
+           Log.d("CoyoteActivity", "服务: " + service.getUuid().toString());
+           service.getCharacteristics().forEach(characteristic -> {
+               Log.d("CoyoteActivity", "特征: " + characteristic.getUuid().toString());
+           });
+       });
     }
 
 
