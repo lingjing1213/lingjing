@@ -79,4 +79,8 @@ dependencies {
     implementation(libs.fastjson2)
     implementation(libs.rxandroidble)
 
+    implementation(libs.core)
+    implementation(libs.dsp.jvm)
+
+
 }

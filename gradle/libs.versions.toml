@@ -1,6 +1,8 @@
 [versions]
 agp = "8.5.0"
+core = "2.5"
 fastjson2 = "2.0.53.android8"
+jvm = "2.5"
 kotlin = "1.9.0"
 coreKtx = "1.10.1"
 junit = "4.13.2"
@@ -22,6 +24,8 @@ fragmentKtx = "1.5.6"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+core = { module = "be.tarsos.dsp:core", version.ref = "core" }
+dsp-jvm = { module = "be.tarsos.dsp:jvm", version.ref = "jvm" }
 fastjson2 = { module = "com.alibaba.fastjson2:fastjson2", version.ref = "fastjson2" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
