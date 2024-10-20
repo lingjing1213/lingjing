@@ -165,5 +165,17 @@
         app:layout_constraintStart_toEndOf="@+id/b_text2"
         app:layout_constraintTop_toTopOf="@+id/b_text2" />
 
+<!--    按钮区域-->
+    <FrameLayout
+        android:id="@+id/button_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:minHeight="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b_text2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
