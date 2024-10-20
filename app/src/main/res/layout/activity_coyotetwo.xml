@@ -55,7 +55,7 @@
         android:id="@+id/a_intensity_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A 强度：0 上限 290"
+        android:text="A 强度：0 (上限 290)"
         android:textSize="16sp"
         android:layout_marginTop="16dp"/>
 
@@ -73,7 +73,7 @@
         android:id="@+id/b_intensity_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="B 强度：0 上限 290"
+        android:text="B 强度：0 (上限 290)"
         android:textSize="16sp"
         android:layout_marginTop="16dp"/>
 
