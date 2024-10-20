@@ -17,7 +17,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.jing.R;
-import com.jing.toys.CoyoteTwo;
 import com.jing.utils.BluetoothGattManager;
 import com.jing.utils.BluetoothUtils;
 import com.jing.utils.CoyoteConstant;
@@ -71,7 +70,7 @@ public class CoyoteActivity extends AppCompatActivity {
     private void checkAndConnect(String version) {
         if (mBluetoothGatt != null && mBluetoothGatt.connect()) {
             if (mBluetoothGatt.getDevice().getName().equals(coyoteName) && mBluetoothGatt.getDevice().getAddress().equals(coyoteAddress) && version.equals("2.0")){
-                Intent intent = new Intent(CoyoteActivity.this, CoyoteTwo.class);
+                Intent intent = new Intent(CoyoteActivity.this, DGLabV2.class);
                 intent.putExtra("deviceName", coyoteName);
                 intent.putExtra("deviceAddress", coyoteAddress);
                 intent.putExtra("version", version);
@@ -99,7 +98,7 @@ public class CoyoteActivity extends AppCompatActivity {
             public void onScanResult(int callbackType, ScanResult result) {
                 super.onScanResult(callbackType, result);
                 BluetoothDevice device = result.getDevice();
-                if (device.getName() != null && device.getName().equals(CoyoteConstant.COYOTE_TWO_NAME)) {
+                if (device.getName() != null && device.getName().equals(CoyoteConstant.DGLabV2_NAME)) {
                     mDevice = device;
                     coyoteName = device.getName();
                     coyoteAddress = device.getAddress();

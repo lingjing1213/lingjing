@@ -61,7 +61,7 @@
         </activity>
 
         <activity
-            android:name=".toys.CoyoteTwo"
+            android:name=".service.DGLabV2"
             android:exported="true"
             android:theme="@style/LoginTheme">
         </activity>

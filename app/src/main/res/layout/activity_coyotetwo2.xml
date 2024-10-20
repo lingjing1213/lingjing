@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--预计的更改后的郊狼页面-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF1F8"
+    android:padding="16dp">
+    <!-- 电量显示 -->
+    <TextView
+        android:id="@+id/battery_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="电量:0%"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:layout_width="0dp"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_height="wrap_content"
+        android:progress="50"
+        app:layout_constraintEnd_toEndOf="@+id/battery_level"
+        app:layout_constraintStart_toStartOf="@+id/battery_level"
+        app:layout_constraintTop_toBottomOf="@+id/battery_level" />
+
+    <TextView
+        android:id="@+id/a_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:text="A"
+        app:layout_constraintEnd_toStartOf="@+id/b_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/b_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="244dp"
+        android:text="B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/a_text"
+        app:layout_constraintTop_toTopOf="@+id/a_text" />
+    <!-- A 强度 -->
+
+    <TextView
+        android:id="@+id/a_intensity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/a_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/a_text"
+        app:layout_constraintTop_toBottomOf="@+id/a_text" />
+    <Button
+        android:id="@+id/decrease_voltage_a_but"
+        android:text="-"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/a_intensity_text"
+        app:layout_constraintEnd_toStartOf="@+id/a_intensity_text"
+        app:layout_constraintTop_toTopOf="@+id/a_intensity_text" />
+    <Button
+        android:id="@+id/increase_voltage_a_but"
+        android:text="+"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/a_intensity_text"
+        app:layout_constraintStart_toEndOf="@+id/a_intensity_text"
+        app:layout_constraintTop_toTopOf="@+id/a_intensity_text" />
+
+    <ImageButton
+        android:id="@+id/play_a_but"
+        android:src="@mipmap/ic_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/a_intensity_text"
+        app:layout_constraintStart_toStartOf="@+id/a_intensity_text"
+        app:layout_constraintTop_toBottomOf="@+id/a_intensity_text" />
+
+    <TextView
+        android:id="@+id/b_intensity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/b_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/b_text"
+        app:layout_constraintTop_toBottomOf="@+id/b_text"/>
+    <Button
+        android:id="@+id/decrease_voltage_b_but"
+        android:text="-"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/b_intensity_text"
+        app:layout_constraintEnd_toStartOf="@+id/b_intensity_text"
+        app:layout_constraintTop_toTopOf="@+id/b_intensity_text" />
+    <Button
+        android:id="@+id/increase_voltage_b_but"
+        android:text="+"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/b_intensity_text"
+        app:layout_constraintStart_toEndOf="@+id/b_intensity_text"
+        app:layout_constraintTop_toTopOf="@+id/b_intensity_text" />
+    <ImageButton
+        android:id="@+id/play_b_but"
+        android:src="@mipmap/ic_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/b_intensity_text"
+        app:layout_constraintStart_toStartOf="@+id/b_intensity_text"
+        app:layout_constraintTop_toBottomOf="@+id/b_intensity_text" />
+
+    <TextView
+        android:id="@+id/a_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:text="A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_a_but" />
+
+    <view
+        class="android.widget.Button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/a_text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/a_text2"
+        app:layout_constraintTop_toTopOf="@+id/a_text2" />
+
+    <TextView
+        android:id="@+id/b_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="B"
+        app:layout_constraintStart_toStartOf="@+id/a_text2"
+        app:layout_constraintTop_toBottomOf="@+id/a_text2" />
+
+    <view
+        class="android.widget.Button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/b_text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/b_text2"
+        app:layout_constraintTop_toTopOf="@+id/b_text2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

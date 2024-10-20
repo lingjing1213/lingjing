@@ -17,8 +17,8 @@
 AB通道服务: 955a180b-0fe2-f5aa-a094-84b8d4f3e8ad
 特征: 955a1503-0fe2-f5aa-a094-84b8d4f3e8ad
 强度特征: 955a1504-0fe2-f5aa-a094-84b8d4f3e8ad
-波形A特征: 955a1505-0fe2-f5aa-a094-84b8d4f3e8ad
-波形B特征: 955a1506-0fe2-f5aa-a094-84b8d4f3e8ad
+波形B特征: 955a1505-0fe2-f5aa-a094-84b8d4f3e8ad
+波形A特征: 955a1506-0fe2-f5aa-a094-84b8d4f3e8ad
 特征: 955a1507-0fe2-f5aa-a094-84b8d4f3e8ad
 特征: 955a1508-0fe2-f5aa-a094-84b8d4f3e8ad
 特征: 955a1509-0fe2-f5aa-a094-84b8d4f3e8ad
